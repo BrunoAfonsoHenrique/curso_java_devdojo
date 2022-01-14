@@ -1,0 +1,24 @@
+package io.test;
+
+import java.io.File;
+import java.io.IOException;
+
+public class FileDiretorioTest {
+
+	public static void main(String[] args) throws IOException {
+		File diretorio = new File("C:\\Users\\Usuário\\Desktop\\devdojo\\io\\folder");
+		boolean mkdir = diretorio.mkdir(); // createNewFile() --> para criar arquivos | mkdir -> criar diretórios
+		System.out.println("Diretorio criado " + mkdir);
+		
+		File arquivo = new File("C:\\Users\\Usuário\\Desktop\\devdojo\\io\\folder\\arquivo.txt");
+		boolean novoArquivo = arquivo.createNewFile();
+		System.out.println("Arquivo criado " + novoArquivo);
+		
+		File arquivoNovoNome = new File("arquivo_renomeado.txt");
+		boolean renomeado = arquivo.renameTo(arquivoNovoNome);
+		System.out.println("Renomeado: " + renomeado);
+		
+		
+	}
+
+}

@@ -1,0 +1,39 @@
+package expressoesregulares;
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class ExpressoesRegularesRegex {
+
+	public static void main(String[] args) {
+		
+		String regex = "a";
+		String texto = "abababa";
+		
+		
+		/*
+		 * Nesse momento obteremos uma instância de Pattern, através do * método
+		* static compile(String regex), o qual recebe uma String que é a
+		* expressção regular
+		*/
+		Pattern pattern = Pattern.compile(regex);
+		
+		
+		/*
+		* Aqui, atravÃ©s da instancia de Pattern, chamando o método * matcher() e 
+		* passando a fonte de busca
+		*/
+		Matcher matcher = pattern.matcher(texto);
+		
+		System.out.println("Texto: " + texto);
+		System.out.println("Indice: 0123456789");
+		System.out.println("Expressão: " + matcher.pattern());
+		System.out.println("Posições encontradas");
+		
+		//Ligando o motor
+		while(matcher.find()) {
+			System.out.print(matcher.start() + " ");   //Ligando o motor
+		}
+	}
+
+}

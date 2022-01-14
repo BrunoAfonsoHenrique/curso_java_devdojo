@@ -1,0 +1,33 @@
+package io.test;
+
+import java.io.FileReader;
+import java.io.FileWriter;
+
+public class BufferedTest {
+
+	public static void main(String[] args) {
+		
+		try {
+		FileWriter escreverNoArquivo = new FileWriter(arquivo); //new FileWriter(arquivo, true);
+		escreverNoArquivo.write("Escrevendo uma mensagem no arquivo\nPulando linha");
+		escreverNoArquivo.flush();
+		escreverNoArquivo.close();
+		
+		FileReader lendoArquivo = new FileReader(arquivo);
+		char[] entrada = new char[500];
+		int tamanho = lendoArquivo.read(entrada);
+		System.out.println("Tamanho: " + tamanho);
+		
+		for(char c : entrada) {
+			System.out.print(c);
+		}
+		lendoArquivo.close();
+		
+	} catch (IOException e) {
+		
+		e.printStackTrace();
+	}
+
+	}
+
+}

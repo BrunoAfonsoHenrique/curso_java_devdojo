@@ -1,0 +1,13 @@
+package io.test;
+
+import java.io.File;
+
+public class FileDiretorioTest {
+
+	public static void main(String[] args) {
+		File arquivo2 = new File("C:\\Users\\Usuário\\Desktop\\devdojo\\io\\arquivoscriados");
+		boolean mkdir = arquivo2.mkdir();
+		System.out.println("Diretorio criado " + mkdir);
+	}
+
+}

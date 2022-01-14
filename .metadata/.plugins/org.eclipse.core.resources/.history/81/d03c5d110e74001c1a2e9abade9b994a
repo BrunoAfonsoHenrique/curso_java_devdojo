@@ -1,0 +1,11 @@
+package niotest;
+
+public class CriandoPathTest {
+
+	public static void main(String[] args) {
+		
+		
+
+	}
+
+}

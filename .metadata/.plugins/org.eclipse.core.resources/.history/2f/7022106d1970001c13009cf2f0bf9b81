@@ -1,0 +1,73 @@
+package expressoesregulares;
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+// é usada para buscar padrões dentro de um arquivo de texto
+public class ExpressoesRegularesRegex {
+
+	public static void main(String[] args) {
+		
+		/**
+		 * Metacarateres (principais)
+		 * 
+		 *  \d -> todos os digitos/numeros
+		 *  \D -> tudo que não for digito
+		 *  \s -> espaços em branco \t \n \f \r
+		 *  \S -> Caractere que não é branco
+		 *  \w -> caracteres de palavras a-z A-Z, digitos  e _underline
+		 *  \W -> Tudo que não for caractere de palavra
+		 *  [] --> procure exatamente. EX: [abc]
+		 *  
+		 */ 
+		
+		/**
+		 *  Quantificadores
+		 *  ? zero ou uma ocorrencia
+		 *  * zero ou mais
+		 *  + uma ou mais
+		 *  [n,m]
+		 *  () -> Agrupar uma expressão
+		 *  | -> OU
+		 *  $ -> encontrar algo no fim da linha
+		 *  . -> coringa
+		 *  
+		 *  Exemplo: o(v|c)o = ovo, oco
+		 * maca(rr|c)ão = macarrão, ou macacão
+		 * 
+		 */
+		int numeroHex = 0x1;
+//		String regex = "0[xX]([0-9a-fA-F])+(\\s|$)";
+//		String texto = "12 0x 0X 0xFFABC 0x10G 0x1";
+		
+		
+		String regex = "([a-zA-z0-9\\._-])+@([a-zA-Z])+\\.([a-zA-Z])+";
+		String texto = "fulano@hotmail.com, 102/abc@gmail.com, #@!abrao@mail, teste@gmail.br, teste@mail";
+		/*
+		 * Nesse momento obteremos uma instância de Pattern, através do * método
+		* static compile(String regex), o qual recebe uma String que é a
+		* expressção regular
+		*/
+		Pattern pattern = Pattern.compile(regex);
+		
+		
+		/*
+		* Aqui, atravÃ©s da instancia de Pattern, chamando o método * matcher() e 
+		* passando a fonte de busca
+		*/
+		Matcher matcher = pattern.matcher(texto);
+		
+		System.out.println("Texto: " + texto);
+		System.out.println("Indice: 0123456789");
+		System.out.println("Expressão: " + matcher.pattern());
+		System.out.println("Posições encontradas");
+		
+		//Ligando o motor
+		while(matcher.find()) {
+			System.out.println(matcher.start() + " "+matcher.group());   //Ligando o motor
+		}
+		
+		
+	}
+
+}

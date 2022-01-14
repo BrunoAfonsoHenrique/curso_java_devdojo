@@ -1,0 +1,21 @@
+package resourcebundle.test;
+
+import java.util.Locale;
+import java.util.ResourceBundle;
+
+public class ResourceBundleTest {
+
+	public static void main(String[] args) {
+		
+		//System.out.println(Locale.getDefault());
+		//ResourceBundle rb = ResourceBundle.getBundle("messages", new Locale("pt","BR"));
+		//System.out.println(rb.getString("hello"));
+		//System.out.println(rb.getString("good.morning"));
+		
+		Locale locale = new Locale("pt", "BR");
+
+		ResourceBundle bundle = ResourceBundle.getBundle("resources/messages", locale);
+		System.out.println(bundle.getString("welcome"));
+	}
+
+}

@@ -1,0 +1,13 @@
+package io.test;
+
+import java.io.File;
+
+public class FileDiretorioTest {
+
+	public static void main(String[] args) {
+		File diretorio = new File("C:\\Users\\Usuário\\Desktop\\devdojo\\io\\folfer");
+		boolean mkdir = diretorio.mkdir(); // createNewFile() --> para criar arquivos | mkdir -> criar diretórios
+		System.out.println("Diretorio criado " + mkdir);
+	}
+
+}

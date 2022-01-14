@@ -1,0 +1,35 @@
+package exerciciojeff;
+
+import java.util.Scanner;
+
+public class exercicio04 {
+
+	public static void main(String[] args) {
+		
+		int numero;
+		int quantidade = 0, soma = 0;
+		
+		Scanner leia = new Scanner(System.in);
+		
+		int cont = 0;
+		while(cont != 1) {
+			System.out.print("Digite um numero: ");
+			numero = leia.nextInt();
+			quantidade = quantidade + 1;
+			soma = soma + numero;
+			
+			System.out.println("Deseja continuar: 0 - Sim, 1 - Não");
+			cont = leia.nextInt();
+			while(cont != 0 || cont !=1) {
+				System.out.println("Deseja continuar: 0 - Sim, 1 - Não");
+				cont = leia.nextInt();
+			}
+			
+		}
+		
+		System.out.println("Soma: " + soma);
+		System.out.println("Qauntida de numero digitados: " + quantidade);
+
+	}
+
+}

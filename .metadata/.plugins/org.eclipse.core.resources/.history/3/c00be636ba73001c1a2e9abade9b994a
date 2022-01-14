@@ -1,0 +1,21 @@
+package io.test;
+
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+
+public class FileWriteReaderTest {
+
+	public static void main(String[] args) {
+		
+		File arquivo = new File("C:\\Users\\Usuário\\Desktop\\devdojo\\io\\arquivoscriados\\Arquivo.txt");
+		try {
+			FileWriter arquivoEscrito = new FileWriter(arquivo);
+			arquivoEscrito.write("Escrevendo uma mensagem no arquivo\nPulando linha");
+		} catch (IOException e) {
+			
+			e.printStackTrace();
+		}
+	}
+
+}

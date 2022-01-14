@@ -1,0 +1,11 @@
+package io.test;
+
+public class Consoletest {
+
+	public static void main(String[] args) {
+		
+		System.out.println(System.console());
+
+	}
+
+}
